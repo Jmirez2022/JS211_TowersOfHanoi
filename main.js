@@ -2,6 +2,7 @@
 
 const assert = require('assert');
 const readline = require('readline');
+const { start } = require('repl');
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
@@ -17,10 +18,11 @@ const rl = readline.createInterface({
         // * 1 is the smallest
 
 let stacks = {
-  a: [4, 3, 2, 1],
-  b: [],
+  a: [4, 3, 2],
+  b: [1],
   c: []
 };
+
 
 // Start here. What is this function doing?
 const printStacks = () => {
@@ -29,28 +31,59 @@ const printStacks = () => {
   console.log("c: " + stacks.c);
 }
 
-// Next, what do you think this function should do?
-const movePiece = () => {
-  // Your code here
+// Before you move, should you check if the move it actually allowed? Should 3 be able to be stacked on 2
+const isLegal = (firstMove, secondMove) => {
+  // making certain moves legal
+ if (
+
+ !stacks[secondMove].length ||
+  stacks[secondMove][stacks[secondMove].length - 1] > stacks[firstMove][stacks[firstMove].length - 1]
+ 
+  ) {
+  return true
+  //if its not those moves return false
+ } else {
+
+  return false;
 
 }
-
-// Before you move, should you check if the move it actually allowed? Should 3 be able to be stacked on 2
-const isLegal = () => {
-  // Your code here
-
 }
 
 // What is a win in Towers of Hanoi? When should this function run?
 const checkForWin = () => {
-  // Your code here
+  // all numbers should be in stack b from biggest to smallest
+  if (stacks['b'].length === 4) {
+    console.log("You are a super star")
+    return true
+    //if false dont say you win
+  } else {
 
+    return false
+    
+  }
 }
 
-// When is this function called? What should it do with its argument?
-const towersOfHanoi = (startStack, endStack) => {
-  // Your code here
+// Next, what do you think this function should do?
+const movePiece = (startStack, endStack) => {
+  // startStack is the piece you want to move and endStack is where you want it
+ stacks[endStack].push(stacks[startStack].pop());
+}
 
+
+
+
+// When is this function called? What should it do with its argument?
+const towersOfHanoi = (start, end) => {
+  // how its played
+  if (isLegal(start, end)) {
+    movePiece(start, end);
+    checkForWin();
+  } else {
+    //illegal move try again
+    console.log("give it another go")
+    
+  }
+  
 }
 
 const getPrompt = () => {
