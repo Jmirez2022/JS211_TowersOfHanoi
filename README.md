@@ -3,7 +3,7 @@
 ![](http://en.gravatar.com/userimage/107370100/a08594145564536138dfaaf072c7b241.png)
 
 # Austin Coding Academy
-
+So for the code I want to get a win in stack 'b' by getting 4,3,2,1. To do that I need to first make and if and return statment in the 'const isLegal'. In that section we make the first move dominant over the second move, that way the second move wont overlap it. Just to make sure the program wont over fail on us we have to tell it what to do in case its false so we put return false, and if its true to be able to permit that move. For the check for win section we have to make sure that in order to win the length is 4 numbers, and we can choose wich stack we want to be the winne. In this case we will try to win setting up 4 numbers from biggest to smallest (4,3,2,1). In the test section we have it made so that when we try to check for a win it will look what it needs to be and if its not we will not be told that we win, it will only let us know if we do it right. For the Towers of Hanoi we want to make sure that if the move make is legal we start with the start stack and end it with end stack, when we do this the code tries to see if we win and if not we can keep playing, if we try to do an illegal move the game will tell is "give it another go" meaning we cant do that to try something else. With this code anmd the one that was given to us we are able to make the game run and playable on terminal.
 ## JavaScript 211 Project: Towers of Hanoi
 
 ## Overview
@@ -16,10 +16,10 @@ Your checkpoint is really a terminal app; which is what you'll be graded on. How
 
 <!-- This is for their personal navigation through the project. They can go through and make sure they get each thing and can comb over it later.  -->
 
-1. 20pts - **Code Plan** - Include this in a `README.md` file in your folder with comments in your code
-1. 10pts - **Move Blocks** - User can move "blocks" from column to column
-1. 20pts - **Illegal Moves** - Prevents larger blocks from stacking on smaller blocks
-1. 20pts - **Notifies winner** - When all the blocks are stacked into column 2 or 1 the user is alerted they won!
+1. 20pts - **Code Plan** - Include this in a `README.md` file in your folder with comments in your code --- DONE!!!!
+1. 10pts - **Move Blocks** - User can move "blocks" from column to column --- DONE!!!!
+1. 20pts - **Illegal Moves** - Prevents larger blocks from stacking on smaller blocks --- DONE!!!!
+1. 20pts - **Notifies winner** - When all the blocks are stacked into column 2 or 1 the user is alerted they won! --- DONE!!!!
 1. 20pts - **Minimum 3 Unit Tests** - Should be attached to your file the same way Tic, Tac, Toe, PigLatin or Rock Paper Scissors is done.
 1. 10pts - **Graphical User Interface** - Take this game out of the terminal by adding a User Interface that uses `towersOfHanoi()` function in `index.js`.
 
